@@ -1,0 +1,1574 @@
+{
+  "contractName": "LockedBankVaults",
+  "abi": [
+    {
+      "inputs": [],
+      "stateMutability": "nonpayable",
+      "type": "constructor"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "target",
+          "type": "address"
+        }
+      ],
+      "name": "AddressEmptyCode",
+      "type": "error"
+    },
+    {
+      "inputs": [],
+      "name": "AttacksPrevented",
+      "type": "error"
+    },
+    {
+      "inputs": [],
+      "name": "CallerNotSamWitchVRF",
+      "type": "error"
+    },
+    {
+      "inputs": [],
+      "name": "CannotChangeCombatantsDuringAttack",
+      "type": "error"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "implementation",
+          "type": "address"
+        }
+      ],
+      "name": "ERC1967InvalidImplementation",
+      "type": "error"
+    },
+    {
+      "inputs": [],
+      "name": "ERC1967NonPayable",
+      "type": "error"
+    },
+    {
+      "inputs": [],
+      "name": "FailedCall",
+      "type": "error"
+    },
+    {
+      "inputs": [],
+      "name": "InvalidInitialization",
+      "type": "error"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "enum Skill",
+          "name": "skill",
+          "type": "uint8"
+        }
+      ],
+      "name": "InvalidSkill",
+      "type": "error"
+    },
+    {
+      "inputs": [],
+      "name": "LengthMismatch",
+      "type": "error"
+    },
+    {
+      "inputs": [],
+      "name": "NotAdminAndBeta",
+      "type": "error"
+    },
+    {
+      "inputs": [],
+      "name": "NotInitializing",
+      "type": "error"
+    },
+    {
+      "inputs": [],
+      "name": "NotMemberOfClan",
+      "type": "error"
+    },
+    {
+      "inputs": [],
+      "name": "NotOwnerOfPlayerAndActive",
+      "type": "error"
+    },
+    {
+      "inputs": [],
+      "name": "OnlyClans",
+      "type": "error"
+    },
+    {
+      "inputs": [],
+      "name": "OnlyCombatantsHelper",
+      "type": "error"
+    },
+    {
+      "inputs": [],
+      "name": "OnlyTerritories",
+      "type": "error"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "sender",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "coordinator",
+          "type": "address"
+        }
+      ],
+      "name": "OnlyVRFCoordinator",
+      "type": "error"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "owner",
+          "type": "address"
+        }
+      ],
+      "name": "OwnableInvalidOwner",
+      "type": "error"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "account",
+          "type": "address"
+        }
+      ],
+      "name": "OwnableUnauthorizedAccount",
+      "type": "error"
+    },
+    {
+      "inputs": [],
+      "name": "PercentNotTotal100",
+      "type": "error"
+    },
+    {
+      "inputs": [],
+      "name": "PlayerOnTerritory",
+      "type": "error"
+    },
+    {
+      "inputs": [],
+      "name": "RankNotHighEnough",
+      "type": "error"
+    },
+    {
+      "inputs": [],
+      "name": "RequestIdNotKnown",
+      "type": "error"
+    },
+    {
+      "inputs": [],
+      "name": "TooManyCombatants",
+      "type": "error"
+    },
+    {
+      "inputs": [],
+      "name": "TransferFailed",
+      "type": "error"
+    },
+    {
+      "inputs": [],
+      "name": "UUPSUnauthorizedCallContext",
+      "type": "error"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "bytes32",
+          "name": "slot",
+          "type": "bytes32"
+        }
+      ],
+      "name": "UUPSUnsupportedProxiableUUID",
+      "type": "error"
+    },
+    {
+      "inputs": [],
+      "name": "ZeroAddress",
+      "type": "error"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "clanId",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint64[]",
+          "name": "playerIds",
+          "type": "uint64[]"
+        },
+        {
+          "indexed": false,
+          "internalType": "address",
+          "name": "from",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "leaderPlayerId",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "cooldownTimestamp",
+          "type": "uint256"
+        }
+      ],
+      "name": "AssignCombatants",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "clanId",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "defendingClanId",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "address",
+          "name": "from",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "leaderPlayerId",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "requestId",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "pendingAttackId",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "attackingCooldownTimestamp",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "reattackingCooldownTimestamp",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "itemTokenId",
+          "type": "uint256"
+        }
+      ],
+      "name": "AttackVaults",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "requestId",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint64[]",
+          "name": "attackingPlayerIds",
+          "type": "uint64[]"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint64[]",
+          "name": "defendingPlayerIds",
+          "type": "uint64[]"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256[]",
+          "name": "attackingRolls",
+          "type": "uint256[]"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256[]",
+          "name": "defendingRolls",
+          "type": "uint256[]"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint8[]",
+          "name": "battleResults",
+          "type": "uint8[]"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint8[]",
+          "name": "randomSkills",
+          "type": "uint8[]"
+        },
+        {
+          "indexed": false,
+          "internalType": "bool",
+          "name": "didAttackersWin",
+          "type": "bool"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "attackingClanId",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "defendingClanId",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256[]",
+          "name": "randomWords",
+          "type": "uint256[]"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "percentageToTake",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "brushLost",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "int256",
+          "name": "attackingMMRDiff",
+          "type": "int256"
+        },
+        {
+          "indexed": false,
+          "internalType": "int256",
+          "name": "defendingMMRDiff",
+          "type": "int256"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "clanXPGainedWinner",
+          "type": "uint256"
+        }
+      ],
+      "name": "BattleResult",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "clanId",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "itemTokenId",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "address",
+          "name": "from",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "leaderPlayerId",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "blockAttacksTimestamp",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "blockAttacksCooldownTimestamp",
+          "type": "uint256"
+        }
+      ],
+      "name": "BlockingAttacks",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "clanId",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "address",
+          "name": "from",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "playerId",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "amount",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "numLocksClaimed",
+          "type": "uint256"
+        }
+      ],
+      "name": "ClaimFunds",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "uint256[]",
+          "name": "clanIdsToDelete",
+          "type": "uint256[]"
+        }
+      ],
+      "name": "ForceMMRUpdate",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "uint64",
+          "name": "version",
+          "type": "uint64"
+        }
+      ],
+      "name": "Initialized",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "clanId",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "address",
+          "name": "from",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "playerId",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "amount",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "lockingTimestamp",
+          "type": "uint256"
+        }
+      ],
+      "name": "LockFunds",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "previousOwner",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "newOwner",
+          "type": "address"
+        }
+      ],
+      "name": "OwnershipTransferred",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "playerId",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "clanId",
+          "type": "uint256"
+        }
+      ],
+      "name": "RemoveCombatant",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "brushBurntPercentage",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "brushTreasuryPercentage",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "brushDevPercentage",
+          "type": "uint256"
+        }
+      ],
+      "name": "SetBrushDistributionPercentages",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "enum Skill[]",
+          "name": "skills",
+          "type": "uint8[]"
+        }
+      ],
+      "name": "SetComparableSkills",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "expectedGasLimitFulfill",
+          "type": "uint256"
+        }
+      ],
+      "name": "SetExpectedGasLimitFulfill",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "Ka",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "Kd",
+          "type": "uint256"
+        }
+      ],
+      "name": "SetKValues",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "mmrAttackDistance",
+          "type": "uint256"
+        }
+      ],
+      "name": "SetMMRAttackDistance",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "uint256[]",
+          "name": "clanIds",
+          "type": "uint256[]"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint16[]",
+          "name": "mmrs",
+          "type": "uint16[]"
+        }
+      ],
+      "name": "SetMMRs",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "maxClanCombatants",
+          "type": "uint256"
+        }
+      ],
+      "name": "SetMaxClanCombatants",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "maxLockedVaults",
+          "type": "uint256"
+        }
+      ],
+      "name": "SetMaxLockedVaults",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "bool",
+          "name": "preventAttacks",
+          "type": "bool"
+        }
+      ],
+      "name": "SetPreventAttacks",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "clanId",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "cooldownTimestamp",
+          "type": "uint256"
+        }
+      ],
+      "name": "SuperAttackCooldown",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "implementation",
+          "type": "address"
+        }
+      ],
+      "name": "Upgraded",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "coordinator",
+          "type": "address"
+        }
+      ],
+      "name": "VRFCoordinatorSet",
+      "type": "event"
+    },
+    {
+      "inputs": [],
+      "name": "UPGRADE_INTERFACE_VERSION",
+      "outputs": [
+        {
+          "internalType": "string",
+          "name": "",
+          "type": "string"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "clanId",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint64[]",
+          "name": "playerIds",
+          "type": "uint64[]"
+        },
+        {
+          "internalType": "uint256",
+          "name": "combatantCooldownTimestamp",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "leaderPlayerId",
+          "type": "uint256"
+        }
+      ],
+      "name": "assignCombatants",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "clanId",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "defendingClanId",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint16",
+          "name": "itemTokenId",
+          "type": "uint16"
+        },
+        {
+          "internalType": "uint256",
+          "name": "leaderPlayerId",
+          "type": "uint256"
+        }
+      ],
+      "name": "attackVaults",
+      "outputs": [],
+      "stateMutability": "payable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "clanId",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint16",
+          "name": "itemTokenId",
+          "type": "uint16"
+        },
+        {
+          "internalType": "uint256",
+          "name": "playerId",
+          "type": "uint256"
+        }
+      ],
+      "name": "blockAttacks",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "clanId",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "playerId",
+          "type": "uint256"
+        }
+      ],
+      "name": "claimFunds",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "clanId",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "playerId",
+          "type": "uint256"
+        }
+      ],
+      "name": "clanMemberLeft",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "clanId",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256[]",
+          "name": "otherClanIds",
+          "type": "uint256[]"
+        }
+      ],
+      "name": "clearCooldowns",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256[]",
+          "name": "clanIds",
+          "type": "uint256[]"
+        }
+      ],
+      "name": "forceMMRUpdate",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "getAttackCost",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "clanId",
+          "type": "uint256"
+        }
+      ],
+      "name": "getClanInfo",
+      "outputs": [
+        {
+          "components": [
+            {
+              "internalType": "contract IBank",
+              "name": "bank",
+              "type": "address"
+            },
+            {
+              "internalType": "uint96",
+              "name": "totalBrushLocked",
+              "type": "uint96"
+            },
+            {
+              "internalType": "uint40",
+              "name": "attackingCooldownTimestamp",
+              "type": "uint40"
+            },
+            {
+              "internalType": "uint40",
+              "name": "assignCombatantsCooldownTimestamp",
+              "type": "uint40"
+            },
+            {
+              "internalType": "bool",
+              "name": "currentlyAttacking",
+              "type": "bool"
+            },
+            {
+              "internalType": "uint24",
+              "name": "defendingVaultsOffset",
+              "type": "uint24"
+            },
+            {
+              "internalType": "uint40",
+              "name": "blockAttacksTimestamp",
+              "type": "uint40"
+            },
+            {
+              "internalType": "uint8",
+              "name": "blockAttacksCooldownHours",
+              "type": "uint8"
+            },
+            {
+              "internalType": "bool",
+              "name": "isInMMRArray",
+              "type": "bool"
+            },
+            {
+              "internalType": "uint40",
+              "name": "superAttackCooldownTimestamp",
+              "type": "uint40"
+            },
+            {
+              "internalType": "uint64[]",
+              "name": "playerIds",
+              "type": "uint64[]"
+            },
+            {
+              "components": [
+                {
+                  "internalType": "bool",
+                  "name": "claimed",
+                  "type": "bool"
+                },
+                {
+                  "internalType": "uint40",
+                  "name": "timestamp",
+                  "type": "uint40"
+                },
+                {
+                  "internalType": "uint80",
+                  "name": "amount",
+                  "type": "uint80"
+                },
+                {
+                  "internalType": "uint40",
+                  "name": "timestamp1",
+                  "type": "uint40"
+                },
+                {
+                  "internalType": "uint80",
+                  "name": "amount1",
+                  "type": "uint80"
+                }
+              ],
+              "internalType": "struct Vault[]",
+              "name": "defendingVaults",
+              "type": "tuple[]"
+            }
+          ],
+          "internalType": "struct VaultClanInfo",
+          "name": "",
+          "type": "tuple"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "getIdleClans",
+      "outputs": [
+        {
+          "internalType": "uint256[]",
+          "name": "clanIds",
+          "type": "uint256[]"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "clanId",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "otherClanId",
+          "type": "uint256"
+        }
+      ],
+      "name": "getLastClanBattles",
+      "outputs": [
+        {
+          "components": [
+            {
+              "internalType": "uint40",
+              "name": "lastClanIdAttackOtherClanIdCooldownTimestamp",
+              "type": "uint40"
+            },
+            {
+              "internalType": "uint8",
+              "name": "numReattacks",
+              "type": "uint8"
+            },
+            {
+              "internalType": "uint40",
+              "name": "lastOtherClanIdAttackClanIdCooldownTimestamp",
+              "type": "uint40"
+            },
+            {
+              "internalType": "uint8",
+              "name": "numReattacksOtherClan",
+              "type": "uint8"
+            }
+          ],
+          "internalType": "struct ClanBattleInfo",
+          "name": "",
+          "type": "tuple"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "getSortedClanIdsByMMR",
+      "outputs": [
+        {
+          "internalType": "uint32[]",
+          "name": "",
+          "type": "uint32[]"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "getSortedMMR",
+      "outputs": [
+        {
+          "internalType": "uint16[]",
+          "name": "",
+          "type": "uint16[]"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "contract IPlayers",
+          "name": "players",
+          "type": "address"
+        },
+        {
+          "internalType": "contract IClans",
+          "name": "clans",
+          "type": "address"
+        },
+        {
+          "internalType": "contract IBrushToken",
+          "name": "brush",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "bankRelay",
+          "type": "address"
+        },
+        {
+          "internalType": "contract ItemNFT",
+          "name": "itemNFT",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "treasury",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "dev",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "paintswapVRFConsumer",
+          "type": "address"
+        },
+        {
+          "internalType": "enum Skill[]",
+          "name": "comparableSkills",
+          "type": "uint8[]"
+        },
+        {
+          "internalType": "uint16",
+          "name": "mmrAttackDistance",
+          "type": "uint16"
+        },
+        {
+          "internalType": "uint24",
+          "name": "lockFundsPeriod",
+          "type": "uint24"
+        },
+        {
+          "internalType": "uint8",
+          "name": "maxClanCombatants",
+          "type": "uint8"
+        },
+        {
+          "internalType": "uint8",
+          "name": "maxLockedVaults",
+          "type": "uint8"
+        },
+        {
+          "internalType": "contract AdminAccess",
+          "name": "adminAccess",
+          "type": "address"
+        },
+        {
+          "internalType": "contract IActivityPoints",
+          "name": "activityPoints",
+          "type": "address"
+        },
+        {
+          "internalType": "bool",
+          "name": "isBeta",
+          "type": "bool"
+        }
+      ],
+      "name": "initialize",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "contract ITerritories",
+          "name": "territories",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "combatantsHelper",
+          "type": "address"
+        },
+        {
+          "internalType": "contract IBankFactory",
+          "name": "bankFactory",
+          "type": "address"
+        }
+      ],
+      "name": "initializeAddresses",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256[]",
+          "name": "clanIds",
+          "type": "uint256[]"
+        },
+        {
+          "internalType": "uint16[]",
+          "name": "mmrs",
+          "type": "uint16[]"
+        },
+        {
+          "internalType": "bool",
+          "name": "clear",
+          "type": "bool"
+        }
+      ],
+      "name": "initializeMMR",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "paintswapVRFConsumer",
+          "type": "address"
+        }
+      ],
+      "name": "initializeV3",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "clanId",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "playerId",
+          "type": "uint256"
+        }
+      ],
+      "name": "isCombatant",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "clanId",
+          "type": "uint256"
+        },
+        {
+          "internalType": "address",
+          "name": "from",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "playerId",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "amount",
+          "type": "uint256"
+        }
+      ],
+      "name": "lockFunds",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "owner",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "proxiableUUID",
+      "outputs": [
+        {
+          "internalType": "bytes32",
+          "name": "",
+          "type": "bytes32"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "requestId",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256[]",
+          "name": "randomWords",
+          "type": "uint256[]"
+        }
+      ],
+      "name": "rawFulfillRandomWords",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "renounceOwnership",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "activityPoints",
+          "type": "address"
+        }
+      ],
+      "name": "setActivityPoints",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "requestId",
+          "type": "uint256"
+        }
+      ],
+      "name": "setAttackInProgress",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint8",
+          "name": "brushBurntPercentage",
+          "type": "uint8"
+        },
+        {
+          "internalType": "uint8",
+          "name": "brushTreasuryPercentage",
+          "type": "uint8"
+        },
+        {
+          "internalType": "uint8",
+          "name": "brushDevPercentage",
+          "type": "uint8"
+        }
+      ],
+      "name": "setBrushDistributionPercentages",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "enum Skill[]",
+          "name": "skills",
+          "type": "uint8[]"
+        }
+      ],
+      "name": "setComparableSkills",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "dev",
+          "type": "address"
+        }
+      ],
+      "name": "setDevAddress",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint24",
+          "name": "expectedGasLimitFulfill",
+          "type": "uint24"
+        }
+      ],
+      "name": "setExpectedGasLimitFulfill",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint8",
+          "name": "kA",
+          "type": "uint8"
+        },
+        {
+          "internalType": "uint8",
+          "name": "kD",
+          "type": "uint8"
+        }
+      ],
+      "name": "setKValues",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint16",
+          "name": "mmrAttackDistance",
+          "type": "uint16"
+        }
+      ],
+      "name": "setMMRAttackDistance",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint8",
+          "name": "maxClanCombatants",
+          "type": "uint8"
+        }
+      ],
+      "name": "setMaxClanCombatants",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint8",
+          "name": "maxLockedVaults",
+          "type": "uint8"
+        }
+      ],
+      "name": "setMaxLockedVaults",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "bool",
+          "name": "preventAttacks",
+          "type": "bool"
+        }
+      ],
+      "name": "setPreventAttacks",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "newOwner",
+          "type": "address"
+        }
+      ],
+      "name": "transferOwnership",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "newImplementation",
+          "type": "address"
+        },
+        {
+          "internalType": "bytes",
+          "name": "data",
+          "type": "bytes"
+        }
+      ],
+      "name": "upgradeToAndCall",
+      "outputs": [],
+      "stateMutability": "payable",
+      "type": "function"
+    }
+  ]
+}

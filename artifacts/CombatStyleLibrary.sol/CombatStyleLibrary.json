@@ -1,0 +1,16 @@
+{
+  "contractName": "CombatStyleLibrary",
+  "abi": [
+    {
+      "inputs": [
+        {
+          "internalType": "uint8",
+          "name": "combatStyle",
+          "type": "uint8"
+        }
+      ],
+      "name": "InvalidCombatStyleId",
+      "type": "error"
+    }
+  ]
+}

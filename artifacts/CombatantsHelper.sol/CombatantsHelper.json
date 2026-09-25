@@ -1,0 +1,428 @@
+{
+  "contractName": "CombatantsHelper",
+  "abi": [
+    {
+      "inputs": [],
+      "stateMutability": "nonpayable",
+      "type": "constructor"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "target",
+          "type": "address"
+        }
+      ],
+      "name": "AddressEmptyCode",
+      "type": "error"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "implementation",
+          "type": "address"
+        }
+      ],
+      "name": "ERC1967InvalidImplementation",
+      "type": "error"
+    },
+    {
+      "inputs": [],
+      "name": "ERC1967NonPayable",
+      "type": "error"
+    },
+    {
+      "inputs": [],
+      "name": "FailedCall",
+      "type": "error"
+    },
+    {
+      "inputs": [],
+      "name": "InvalidInitialization",
+      "type": "error"
+    },
+    {
+      "inputs": [],
+      "name": "NotAdminAndBeta",
+      "type": "error"
+    },
+    {
+      "inputs": [],
+      "name": "NotClans",
+      "type": "error"
+    },
+    {
+      "inputs": [],
+      "name": "NotInitializing",
+      "type": "error"
+    },
+    {
+      "inputs": [],
+      "name": "NotMemberOfClan",
+      "type": "error"
+    },
+    {
+      "inputs": [],
+      "name": "NotOwnerOfPlayerAndActive",
+      "type": "error"
+    },
+    {
+      "inputs": [],
+      "name": "NotSettingCombatants",
+      "type": "error"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "owner",
+          "type": "address"
+        }
+      ],
+      "name": "OwnableInvalidOwner",
+      "type": "error"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "account",
+          "type": "address"
+        }
+      ],
+      "name": "OwnableUnauthorizedAccount",
+      "type": "error"
+    },
+    {
+      "inputs": [],
+      "name": "PlayerAlreadyExistingCombatant",
+      "type": "error"
+    },
+    {
+      "inputs": [],
+      "name": "PlayerCannotBeInAssignedMoreThanOnce",
+      "type": "error"
+    },
+    {
+      "inputs": [],
+      "name": "PlayerCombatantCooldownTimestamp",
+      "type": "error"
+    },
+    {
+      "inputs": [],
+      "name": "PlayerIdsNotSortedOrDuplicates",
+      "type": "error"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "playerId",
+          "type": "uint256"
+        }
+      ],
+      "name": "PlayerNotUpgraded",
+      "type": "error"
+    },
+    {
+      "inputs": [],
+      "name": "RankNotHighEnough",
+      "type": "error"
+    },
+    {
+      "inputs": [],
+      "name": "SetCombatantsIncorrectly",
+      "type": "error"
+    },
+    {
+      "inputs": [],
+      "name": "UUPSUnauthorizedCallContext",
+      "type": "error"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "bytes32",
+          "name": "slot",
+          "type": "bytes32"
+        }
+      ],
+      "name": "UUPSUnsupportedProxiableUUID",
+      "type": "error"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "newCooldownTimestampPenalty",
+          "type": "uint256"
+        }
+      ],
+      "name": "EditMemberLeftCombatantCooldownTimestampPenalty",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "uint64",
+          "name": "version",
+          "type": "uint64"
+        }
+      ],
+      "name": "Initialized",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "previousOwner",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "newOwner",
+          "type": "address"
+        }
+      ],
+      "name": "OwnershipTransferred",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "implementation",
+          "type": "address"
+        }
+      ],
+      "name": "Upgraded",
+      "type": "event"
+    },
+    {
+      "inputs": [],
+      "name": "UPGRADE_INTERFACE_VERSION",
+      "outputs": [
+        {
+          "internalType": "string",
+          "name": "",
+          "type": "string"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "playerId",
+          "type": "uint256"
+        }
+      ],
+      "name": "applyPlayerCombatantCooldownPenalty",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "clanId",
+          "type": "uint256"
+        },
+        {
+          "internalType": "bool",
+          "name": "setTerritoryCombatants",
+          "type": "bool"
+        },
+        {
+          "internalType": "uint64[]",
+          "name": "territoryPlayerIds",
+          "type": "uint64[]"
+        },
+        {
+          "internalType": "bool",
+          "name": "setLockedVaultCombatants",
+          "type": "bool"
+        },
+        {
+          "internalType": "uint64[]",
+          "name": "lockedVaultPlayerIds",
+          "type": "uint64[]"
+        },
+        {
+          "internalType": "bool",
+          "name": "setRaidCombatants",
+          "type": "bool"
+        },
+        {
+          "internalType": "uint64[]",
+          "name": "raidPlayerIds",
+          "type": "uint64[]"
+        },
+        {
+          "internalType": "uint256",
+          "name": "leaderPlayerId",
+          "type": "uint256"
+        }
+      ],
+      "name": "assignCombatants",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint64[]",
+          "name": "playerIds",
+          "type": "uint64[]"
+        }
+      ],
+      "name": "clearCooldowns",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "contract IPlayers",
+          "name": "players",
+          "type": "address"
+        },
+        {
+          "internalType": "contract IClans",
+          "name": "clans",
+          "type": "address"
+        },
+        {
+          "internalType": "contract ICombatants",
+          "name": "territories",
+          "type": "address"
+        },
+        {
+          "internalType": "contract ICombatants",
+          "name": "lockedVaults",
+          "type": "address"
+        },
+        {
+          "internalType": "contract ICombatants",
+          "name": "raids",
+          "type": "address"
+        },
+        {
+          "internalType": "contract AdminAccess",
+          "name": "adminAccess",
+          "type": "address"
+        },
+        {
+          "internalType": "bool",
+          "name": "isBeta",
+          "type": "bool"
+        }
+      ],
+      "name": "initialize",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "initializeV4",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "owner",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "proxiableUUID",
+      "outputs": [
+        {
+          "internalType": "bytes32",
+          "name": "",
+          "type": "bytes32"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "renounceOwnership",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint24",
+          "name": "cooldownTimestampPenalty",
+          "type": "uint24"
+        }
+      ],
+      "name": "setPlayerLeftCombatantCooldownTimestampPenalty",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "newOwner",
+          "type": "address"
+        }
+      ],
+      "name": "transferOwnership",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "newImplementation",
+          "type": "address"
+        },
+        {
+          "internalType": "bytes",
+          "name": "data",
+          "type": "bytes"
+        }
+      ],
+      "name": "upgradeToAndCall",
+      "outputs": [],
+      "stateMutability": "payable",
+      "type": "function"
+    }
+  ]
+}

@@ -1,0 +1,91 @@
+[
+  {
+    "inputs": [],
+    "name": "NotEnoughRandomWords",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "TooManyAttackers",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "TooManyDefenders",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "players",
+        "type": "address"
+      },
+      {
+        "internalType": "uint64[]",
+        "name": "clanMembersA",
+        "type": "uint64[]"
+      },
+      {
+        "internalType": "uint64[]",
+        "name": "clanMembersB",
+        "type": "uint64[]"
+      },
+      {
+        "internalType": "uint8[]",
+        "name": "skills",
+        "type": "uint8[]"
+      },
+      {
+        "internalType": "uint256[]",
+        "name": "randomWords",
+        "type": "uint256[]"
+      },
+      {
+        "internalType": "uint256",
+        "name": "extraRollsA",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "extraRollsB",
+        "type": "uint256"
+      }
+    ],
+    "name": "determineBattleOutcome",
+    "outputs": [
+      {
+        "internalType": "uint8[]",
+        "name": "battleResults",
+        "type": "uint8[]"
+      },
+      {
+        "internalType": "uint256[]",
+        "name": "rollsA",
+        "type": "uint256[]"
+      },
+      {
+        "internalType": "uint256[]",
+        "name": "rollsB",
+        "type": "uint256[]"
+      },
+      {
+        "internalType": "bool",
+        "name": "didAWin",
+        "type": "bool"
+      },
+      {
+        "internalType": "uint64[]",
+        "name": "shuffledClanMembersA",
+        "type": "uint64[]"
+      },
+      {
+        "internalType": "uint64[]",
+        "name": "shuffledClanMembersB",
+        "type": "uint64[]"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  }
+]

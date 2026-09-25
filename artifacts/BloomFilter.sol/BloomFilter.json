@@ -1,0 +1,10 @@
+{
+  "contractName": "BloomFilter",
+  "abi": [
+    {
+      "inputs": [],
+      "name": "ZeroHashCount",
+      "type": "error"
+    }
+  ]
+}

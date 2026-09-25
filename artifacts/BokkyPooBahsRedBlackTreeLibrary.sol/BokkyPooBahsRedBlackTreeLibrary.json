@@ -1,0 +1,15 @@
+{
+  "contractName": "BokkyPooBahsRedBlackTreeLibrary",
+  "abi": [
+    {
+      "inputs": [],
+      "name": "KeyCannotBeZero",
+      "type": "error"
+    },
+    {
+      "inputs": [],
+      "name": "KeyDoesntExist",
+      "type": "error"
+    }
+  ]
+}

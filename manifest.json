@@ -1,0 +1,482 @@
+{
+  "generator": "abi-typegen 0.6.0",
+  "generator_archive_sha256": "720c00205e575dc617131bfa6e47208a0e0d14023d02764f808232a054f49257",
+  "source_repository": "https://github.com/PaintSwap/estfor-contracts",
+  "source_commit": "664a778d1fa5f122ee9669b96a79666a7dcba436",
+  "input_kind": "checked-in data/abi exports, not recompiled",
+  "contract_count": 59,
+  "contracts": [
+    {
+      "contract": "ActivityPoints",
+      "abi": "abi/ActivityPoints.json",
+      "abi_sha256": "0b33067aa61111201f59e5a17341ce2c2e58d810628581d41f43e808e1930aae",
+      "binding": "generated/activity_points.gd",
+      "binding_sha256": "cd8ec2c2aa67a0fdc1911089bd6306d2058f39510ece3dece457962755dbd662",
+      "functions": 23
+    },
+    {
+      "contract": "AdminAccess",
+      "abi": "abi/AdminAccess.json",
+      "abi_sha256": "b1d2138a78ff8bf9561f8e3a3e31bfa2c9cc663715093992dc7f9f7b52f11e7a",
+      "binding": "generated/admin_access.gd",
+      "binding_sha256": "71ac6f7a3302e3583d8e2f35847796f60d6820cff50cb7818d245c03677a77d3",
+      "functions": 13
+    },
+    {
+      "contract": "Bank",
+      "abi": "abi/Bank.json",
+      "abi_sha256": "7d5f63a25ef27915214ce6965ce50cd62e44f3541ee3b1261a662178313e733e",
+      "binding": "generated/bank.gd",
+      "binding_sha256": "1603e5a938caa82534ccd29359993c720bbaa683a4d69b0408442fd3c9e299c4",
+      "functions": 16
+    },
+    {
+      "contract": "BankFactory",
+      "abi": "abi/BankFactory.json",
+      "abi_sha256": "cc2d8f08fb6bf32cdfb23a26f920084c8ae325637fcc8756d29ba60943b14755",
+      "binding": "generated/bank_factory.gd",
+      "binding_sha256": "83190e0ee8f75e8b60eeb39d35acec2f7d4f9d5a5cd4fcac1c98490917a3875f",
+      "functions": 10
+    },
+    {
+      "contract": "BankRegistry",
+      "abi": "abi/BankRegistry.json",
+      "abi_sha256": "1942c63fd16f918cd8fe8dcb125c60e53585e4d4a715bc09be5b0bf743be0d8b",
+      "binding": "generated/bank_registry.gd",
+      "binding_sha256": "963caef7b156da05ce726e4a55a78e2bd6f6943268782342896f629cea4d9249",
+      "functions": 9
+    },
+    {
+      "contract": "BankRelay",
+      "abi": "abi/BankRelay.json",
+      "abi_sha256": "0d8408795f27dcfe91ee39b0df16a8006e092aa31313cdcda753ac0596f4a5f4",
+      "binding": "generated/bank_relay.gd",
+      "binding_sha256": "cc05bda6126f9b9f6c8272c3b8d542467f8393c545328e0a1ccfb0fad52cffc5",
+      "functions": 31
+    },
+    {
+      "contract": "BlackMarketTrader",
+      "abi": "abi/BlackMarketTrader.json",
+      "abi_sha256": "52a4af144dff60438bfe42cc1bf060e741fe238e6ab235dae4e4a510f1b84768",
+      "binding": "generated/black_market_trader.gd",
+      "binding_sha256": "4ba5fc4e072423a0cc4540c55d6cc96b8d05eec15db2f42b31e628107f29659a",
+      "functions": 15
+    },
+    {
+      "contract": "BloomFilter",
+      "abi": "abi/BloomFilter.json",
+      "abi_sha256": "cacb9e62decf50f233cfbc9318423afe9fa4a2b416ed3ceffcafb39a7a686000",
+      "binding": "generated/bloom_filter.gd",
+      "binding_sha256": "50310f0e35e9596c8e069a8407982f47d357aa6244bbe89cc82fa3e10a9fc3d9",
+      "functions": 0
+    },
+    {
+      "contract": "BokkyPooBahsRedBlackTreeLibrary",
+      "abi": "abi/BokkyPooBahsRedBlackTreeLibrary.json",
+      "abi_sha256": "f061b41e390f76e4f16bf8d7cbead17bd3ac1350f0560fd4333be89fa0fc1067",
+      "binding": "generated/bokky_poo_bahs_red_black_tree_library.gd",
+      "binding_sha256": "ac4f38177a7dc7f941da40912cb0fd69726474372a35c17e2f7d967c7684c2df",
+      "functions": 0
+    },
+    {
+      "contract": "Bridge",
+      "abi": "abi/Bridge.json",
+      "abi_sha256": "ea96e430fe5ac3624cff6406ba37edf7cdb25252c9e845d319664e24ed5b9391",
+      "binding": "generated/bridge.gd",
+      "binding_sha256": "9665f616c8d7a9d50c225bafff01ad2deff39b84863c3edab9160a99df15b8ff",
+      "functions": 17
+    },
+    {
+      "contract": "ClanBattleLibrary",
+      "abi": "abi/ClanBattleLibrary.json",
+      "abi_sha256": "f769ddb17cae59ba2aa630aee15f3b0b9764b3c0e03c0881cfb97e28fbd32d3e",
+      "binding": "generated/clan_battle_library.gd",
+      "binding_sha256": "036c1519ed7d115eef51f0210e5290685d626442515afb0469cad2757b727268",
+      "functions": 1
+    },
+    {
+      "contract": "Clans",
+      "abi": "abi/Clans.json",
+      "abi_sha256": "1db930a9304b1f8fce338822b41aea1a487fd93fcab297816bdb7173208137a9",
+      "binding": "generated/clans.gd",
+      "binding_sha256": "02b1062a3ed1a4d98081833b58f3de8558784b2da7c4b2690821a24ce3182490",
+      "functions": 56
+    },
+    {
+      "contract": "CombatStyleLibrary",
+      "abi": "abi/CombatStyleLibrary.json",
+      "abi_sha256": "b6cd7a41bd9767b7462ea05467a800cdd80424a442aaceb5a201c67bc7f61839",
+      "binding": "generated/combat_style_library.gd",
+      "binding_sha256": "f0291e8d1a33b866d6bf129897ec26652185b0d626f22eb023cfbe1b9e6cae25",
+      "functions": 0
+    },
+    {
+      "contract": "CombatantsHelper",
+      "abi": "abi/CombatantsHelper.json",
+      "abi_sha256": "4f589ea015b62423350f8cbea7ba1fcb0e37eb76e21ee3fabb2615098628373d",
+      "binding": "generated/combatants_helper.gd",
+      "binding_sha256": "a9a194f1e836058c4c9a83b47aed06ce04577b5728430049c05ac5600703ef4b",
+      "functions": 12
+    },
+    {
+      "contract": "Cosmetics",
+      "abi": "abi/Cosmetics.json",
+      "abi_sha256": "17622086c6a1da55313f3b4e228d75a83264d435e2cd53ca5f2e3f2dc2466e00",
+      "binding": "generated/cosmetics.gd",
+      "binding_sha256": "ff33a49bac2633c79448c48bf5ac497a4a52faa1c00872c7072f2a1ba4887377",
+      "functions": 11
+    },
+    {
+      "contract": "DailyRewardsScheduler",
+      "abi": "abi/DailyRewardsScheduler.json",
+      "abi_sha256": "9df430eca104ab32a38dd557c0ff9be992894d477f3774a48c53ad8f144c1c5b",
+      "binding": "generated/daily_rewards_scheduler.gd",
+      "binding_sha256": "c14a833094c5bb8eaa0627897874ba1eceb8b7abf1e791f6e122d1aa3857d21d",
+      "functions": 15
+    },
+    {
+      "contract": "EggInstantVRFActionStrategy",
+      "abi": "abi/EggInstantVRFActionStrategy.json",
+      "abi_sha256": "ea9fd7cbe86b406f52029931ee226884fe300402781092b8d5b5dec2f88998aa",
+      "binding": "generated/egg_instant_vrf_action_strategy.gd",
+      "binding_sha256": "0c1f8810e6839032a22ff08b90c567b151b09a3f881a3c55100539c883217fc0",
+      "functions": 10
+    },
+    {
+      "contract": "EstforLibrary",
+      "abi": "abi/EstforLibrary.json",
+      "abi_sha256": "50a1a67e63cceb8f018092b0021ac9646c0736b6876f2648e178a14fe0a0ef18",
+      "binding": "generated/estfor_library.gd",
+      "binding_sha256": "41aba0ce336637988d76db662cfe41bbe626ce36372c6a9914b1d87d61471e74",
+      "functions": 7
+    },
+    {
+      "contract": "GameSubsidisationRegistry",
+      "abi": "abi/GameSubsidisationRegistry.json",
+      "abi_sha256": "f1e21d7151254480eee4f7b3c783c0b63e758bd7ad681c8ca4da27572b4bd586",
+      "binding": "generated/game_subsidisation_registry.gd",
+      "binding_sha256": "ba98a34610ca0eeb5800337a6cc6d5d000ebda766b20927fc0ee6309488735c5",
+      "functions": 15
+    },
+    {
+      "contract": "GenericInstantVRFActionStrategy",
+      "abi": "abi/GenericInstantVRFActionStrategy.json",
+      "abi_sha256": "2f75cfd1b486011ba73210210badcfafa46a28767d841d2a4a782e4052d4651a",
+      "binding": "generated/generic_instant_vrf_action_strategy.gd",
+      "binding_sha256": "94cb49b856853dfb61ba47c6e55e713398b6014006172acbdf8e223b966c30f1",
+      "functions": 10
+    },
+    {
+      "contract": "GlobalEvents",
+      "abi": "abi/GlobalEvents.json",
+      "abi_sha256": "14804e67e106cf3ba2ea2c9effe2e1a7aaca22ea1459e1898af7f9d12bcc788d",
+      "binding": "generated/global_events.gd",
+      "binding_sha256": "11a46209a3770a39c315f75c12825947abefdd91089cc5f35c07473520edfeba",
+      "functions": 9
+    },
+    {
+      "contract": "InstantActions",
+      "abi": "abi/InstantActions.json",
+      "abi_sha256": "f48f547ef8c019d9ab76740d090bbdf8422936925f3c743a0acdcc35a12b616f",
+      "binding": "generated/instant_actions.gd",
+      "binding_sha256": "139412a95842426d7ba1f7fe19fc13aaa167b3c1aba0e86ea36698414344f52e",
+      "functions": 14
+    },
+    {
+      "contract": "InstantVRFActions",
+      "abi": "abi/InstantVRFActions.json",
+      "abi_sha256": "b69804575d1d722adcf42a3a5c41079796b101fda0de7585517589d61f784bcd",
+      "binding": "generated/instant_vrf_actions.gd",
+      "binding_sha256": "d69da47c1799d2357ce684e677284fde89166686a37bc819e2744ee8a12ac8f8",
+      "functions": 21
+    },
+    {
+      "contract": "ItemNFT",
+      "abi": "abi/ItemNFT.json",
+      "abi_sha256": "46f750498b6ddf56c97452598e3a765d1ebbcb86c989c9c3e8dc990730c4082b",
+      "binding": "generated/item_nft.gd",
+      "binding_sha256": "cdba9f07ee64de488cf8fd9abc540d042b65aeeb4756a36f0819742a76fc31b0",
+      "functions": 44
+    },
+    {
+      "contract": "LockedBankVaults",
+      "abi": "abi/LockedBankVaults.json",
+      "abi_sha256": "24a1534f8ed00e8aefd9c4525d9a992e2a27276e3276754a13756feeb395c0c4",
+      "binding": "generated/locked_bank_vaults.gd",
+      "binding_sha256": "984aed160f39a009d82f57c91e5654894a815ddd128e23922d75778ee9d0e610",
+      "functions": 37
+    },
+    {
+      "contract": "LockedBankVaultsLibrary",
+      "abi": "abi/LockedBankVaultsLibrary.json",
+      "abi_sha256": "8412a9f9d84184b12ce63568e61241e56044c1b4b205f05582b9b14710e98b7c",
+      "binding": "generated/locked_bank_vaults_library.gd",
+      "binding_sha256": "1ae9759ed22ce8a399298fe6c3cd18130c7d6e96ff6ff9e13f02c3ccc8117f05",
+      "functions": 2
+    },
+    {
+      "contract": "Marketplace",
+      "abi": "abi/Marketplace.json",
+      "abi_sha256": "9f6ddf81d8899841d08a991bb35e2ee8f6df5c0e1a5f98d5639b3e0f56ef6c33",
+      "binding": "generated/marketplace.gd",
+      "binding_sha256": "d10059267f3611024e583d50e03fc7a6eb2a542260017f58e12332a96d07cb15",
+      "functions": 11
+    },
+    {
+      "contract": "OrderBook",
+      "abi": "abi/OrderBook.json",
+      "abi_sha256": "f95a306d446416eee3dc812a7112280f63d081e032533b05d75611397655a927",
+      "binding": "generated/order_book.gd",
+      "binding_sha256": "64f560050e6eaecf6e68214274eb1c67d269f6d65b525884d7347dad18d78a79",
+      "functions": 30
+    },
+    {
+      "contract": "PVPBattleground",
+      "abi": "abi/PVPBattleground.json",
+      "abi_sha256": "4500afc4dc0ec0bafc61cb3464a1a0cd730543abeaac757ae2c4eefadc9a7b5d",
+      "binding": "generated/pvp_battleground.gd",
+      "binding_sha256": "6dc783739163db0a260fed96a7509c58f369241ad66e740a0f0be5db02d9a6a4",
+      "functions": 21
+    },
+    {
+      "contract": "PaintswapVRFConsumerBase",
+      "abi": "abi/PaintswapVRFConsumerBase.json",
+      "abi_sha256": "d75c7bbb674e2501d005dff5dba48bd59f280b9efc039479b0bfde9226dc8012",
+      "binding": "generated/paintswap_vrf_consumer_base.gd",
+      "binding_sha256": "cb51f163f4b3b0a0d852c2c0e9b68561c56397307c3d56348589d9ee398ea642",
+      "functions": 1
+    },
+    {
+      "contract": "PaintswapVRFConsumerUpgradeable",
+      "abi": "abi/PaintswapVRFConsumerUpgradeable.json",
+      "abi_sha256": "3a70c98e92c3f25d094a9800635353719828a57eaecf0712f5127f59ad4af80b",
+      "binding": "generated/paintswap_vrf_consumer_upgradeable.gd",
+      "binding_sha256": "f7f48bd001376b3e6a3096df666855b537c04a6c4eba635efb8008adf05db90e",
+      "functions": 1
+    },
+    {
+      "contract": "PassiveActions",
+      "abi": "abi/PassiveActions.json",
+      "abi_sha256": "8b071859b50e477c73a1d58e818d791c6b792316c49216eae464184f40006dc6",
+      "binding": "generated/passive_actions.gd",
+      "binding_sha256": "098915c8007b8b1a974677b51977935023112935c333cbf99c3272ddd1670961",
+      "functions": 20
+    },
+    {
+      "contract": "PetNFT",
+      "abi": "abi/PetNFT.json",
+      "abi_sha256": "6b92a7455a209681420d730d9ae8d677cfcb7a2ab1ec5a621e713296ee9a403f",
+      "binding": "generated/pet_nft.gd",
+      "binding_sha256": "6f5a643b82eda8ed012d0d08cb7e7432335f530246e712339fe25fb77474f39a",
+      "functions": 39
+    },
+    {
+      "contract": "PetNFTLibrary",
+      "abi": "abi/PetNFTLibrary.json",
+      "abi_sha256": "78d00baa9561f1716a9796ac3a980e5c6494ddfc4372ff3a774a11a40911769c",
+      "binding": "generated/pet_nft_library.gd",
+      "binding_sha256": "1b88d0476634d90e2a9d5ec7738a0b391fa545f2aa5ba69f98cc298ea6f6e13f",
+      "functions": 0
+    },
+    {
+      "contract": "PetNFTReroll",
+      "abi": "abi/PetNFTReroll.json",
+      "abi_sha256": "b0a86d877e4d723714273801175e15f51932f9b766c0474e8aac17457ecf7a44",
+      "binding": "generated/pet_nft_reroll.gd",
+      "binding_sha256": "6428a2b0988854ba238e8ada1342e06b51c561ecaff8dbdd77320fa0a72646c4",
+      "functions": 10
+    },
+    {
+      "contract": "PlayerNFT",
+      "abi": "abi/PlayerNFT.json",
+      "abi_sha256": "1e11bb7cd9c938016c78f66aee6a5ba0703aa065d9ee9175fb4d8acd7c6549f4",
+      "binding": "generated/player_nft.gd",
+      "binding_sha256": "8550dae837f13ca3f5bd87ccb50e66bdcea90259b195691fd05c6e4d108ef8ca",
+      "functions": 42
+    },
+    {
+      "contract": "Players",
+      "abi": "abi/Players.json",
+      "abi_sha256": "08a5b8e972a4970f1ddd551b61a022b8ba90f047ab20d7fe781cbb743557510a",
+      "binding": "generated/players.gd",
+      "binding_sha256": "16f06d51966196eeb656f76253b225a2337a917553fdda85bacaab28db46c0e8",
+      "functions": 49
+    },
+    {
+      "contract": "PlayersBase",
+      "abi": "abi/PlayersBase.json",
+      "abi_sha256": "85da7880b431bc98dde2ef6d9a54b9ac6778527b1260a5b9ffbd8d62c0e06cc5",
+      "binding": "generated/players_base.gd",
+      "binding_sha256": "d3c4cf6b41a21fdce4bf4aeebbdbfcb028b0ecf1a12f628655ca92c278fc3947",
+      "functions": 0
+    },
+    {
+      "contract": "PlayersImplMisc",
+      "abi": "abi/PlayersImplMisc.json",
+      "abi_sha256": "154e0de050febbb706793416e7742fc9812e1a8bf2840e38e492786846ac4424",
+      "binding": "generated/players_impl_misc.gd",
+      "binding_sha256": "6a76dcc4095dad90f765e24d80468226aea95350ade4e513810e5f2cad17709c",
+      "functions": 12
+    },
+    {
+      "contract": "PlayersImplMisc1",
+      "abi": "abi/PlayersImplMisc1.json",
+      "abi_sha256": "1a8881e26e665f6fdaf63c3a9214bc077b209cc23e53fc2e7efac418f43e3049",
+      "binding": "generated/players_impl_misc1.gd",
+      "binding_sha256": "fe4f86c3acc475bcd3d7e4af0c1e9db6231e6dbb5a119d13837eaffb387cbe6b",
+      "functions": 8
+    },
+    {
+      "contract": "PlayersImplProcessActions",
+      "abi": "abi/PlayersImplProcessActions.json",
+      "abi_sha256": "2902bb3d19711cb7abf8eb37f289eaaae2c203717f0a5082f7d698de5d7fde38",
+      "binding": "generated/players_impl_process_actions.gd",
+      "binding_sha256": "03ba636cc4635f3a3c96a90e880c62511c0a7e9eaa3bd1f996886e5eeb6d9600",
+      "functions": 3
+    },
+    {
+      "contract": "PlayersImplQueueActions",
+      "abi": "abi/PlayersImplQueueActions.json",
+      "abi_sha256": "da1821fd343e70dfd1f7cfc6f1df4f57aa746aa1988621296f6cc1fcb722537b",
+      "binding": "generated/players_impl_queue_actions.gd",
+      "binding_sha256": "133a542db0dd24b16dc3b336bfe22342c6a659fdcf0a482518f8e49a40761e38",
+      "functions": 5
+    },
+    {
+      "contract": "PlayersImplRewards",
+      "abi": "abi/PlayersImplRewards.json",
+      "abi_sha256": "5ec4d272b444287373467dc525cb577997e56039661a32bbc24444dabc871b42",
+      "binding": "generated/players_impl_rewards.gd",
+      "binding_sha256": "2659853e2923c2e0aa77b60c1e30b822517bc92404a9920913e8a0aad17e78d1",
+      "functions": 2
+    },
+    {
+      "contract": "PlayersLibrary",
+      "abi": "abi/PlayersLibrary.json",
+      "abi_sha256": "736c073092e8ad612d226a5f589fd4553ef4853bba7b49a17bade7c059b470d1",
+      "binding": "generated/players_library.gd",
+      "binding_sha256": "ad59e5a2a344754661aef4f0d1c8a90baaf2ee71d1ed74784c50be6b60d52332",
+      "functions": 13
+    },
+    {
+      "contract": "Promotions",
+      "abi": "abi/Promotions.json",
+      "abi_sha256": "4d64a35dd3c801b12518fdea62df57d20d07c9a8719705dcc33c4d3d689de25b",
+      "binding": "generated/promotions.gd",
+      "binding_sha256": "51f061a9a944efe3dee0b382e0fe044d1ef2fdc37e367f80ef98de30c0b90a70",
+      "functions": 24
+    },
+    {
+      "contract": "PromotionsLibrary",
+      "abi": "abi/PromotionsLibrary.json",
+      "abi_sha256": "cc8c21ec1a79933d26343bebb572104f64c74349adc8a5cbc85e7ffaef5693ba",
+      "binding": "generated/promotions_library.gd",
+      "binding_sha256": "d46d9ed38ff23551d5100068082d22743505af853b15e568195fb156aa51f134",
+      "functions": 0
+    },
+    {
+      "contract": "Quests",
+      "abi": "abi/Quests.json",
+      "abi_sha256": "090b368811b3181081ba19ff20fff2c14b0826c675b5d96cd93d28aacc5fce17",
+      "binding": "generated/quests.gd",
+      "binding_sha256": "0351b3c40f6006051f534e978ece0cae8d20a756438d55f711fd6ba7ac708ed9",
+      "functions": 26
+    },
+    {
+      "contract": "Raids",
+      "abi": "abi/Raids.json",
+      "abi_sha256": "26e0c60fa18fb36e037e1a7e3645a0bf9aed1b603d805f340674858f6771cac0",
+      "binding": "generated/raids.gd",
+      "binding_sha256": "d4e63cc33a4360d0973adba60d546e0bf6e6e52fb1243535611f7f92ce5cb7ba",
+      "functions": 24
+    },
+    {
+      "contract": "RandomnessBeacon",
+      "abi": "abi/RandomnessBeacon.json",
+      "abi_sha256": "05aa60035be0e687070d2e3146d4d7df20182ace99a5238ced1637f950a89628",
+      "binding": "generated/randomness_beacon.gd",
+      "binding_sha256": "ad75a6350968a5240b3239eff6648a4a1117a32316e401a2939daf5476b961bf",
+      "functions": 25
+    },
+    {
+      "contract": "RoyaltyReceiver",
+      "abi": "abi/RoyaltyReceiver.json",
+      "abi_sha256": "e134fa60c38754b344a5d5ac178c581d3db6992ef1438309ecd5ca6b00e4526f",
+      "binding": "generated/royalty_receiver.gd",
+      "binding_sha256": "a718657a20bf7cb1ad47cbeff844a3f06d3429c5cc188d9d6c41b3482d12420d",
+      "functions": 9
+    },
+    {
+      "contract": "SamWitchERC1155UpgradeableSinglePerToken",
+      "abi": "abi/SamWitchERC1155UpgradeableSinglePerToken.json",
+      "abi_sha256": "2d962724dfc52ccac6298d40f296892552c64afddee9398b85f69b56e4cef716",
+      "binding": "generated/sam_witch_erc1155_upgradeable_single_per_token.gd",
+      "binding_sha256": "a35c6b021b33dfed662726e89cfac3ff3af757e1734c1da1fd065067c9247cd4",
+      "functions": 11
+    },
+    {
+      "contract": "Shop",
+      "abi": "abi/Shop.json",
+      "abi_sha256": "a429997a17b0789c908ee9715ee88409f701924c3c3d143eba2e43247b4a8d78",
+      "binding": "generated/shop.gd",
+      "binding_sha256": "6a890b7df9e602b42efb7b3aa2ecf768aa8089c1272c2843cc16abf12652ed00",
+      "functions": 32
+    },
+    {
+      "contract": "SkillLibrary",
+      "abi": "abi/SkillLibrary.json",
+      "abi_sha256": "d13c145b9a2d62c72ac29686b69329c4225e5fa28ca0c07ce674ace37ce3fcf2",
+      "binding": "generated/skill_library.gd",
+      "binding_sha256": "b8b2d94fbf58f0c169640cd02da27b000cca63e49a9675e03bd95a7d46a46b97",
+      "functions": 0
+    },
+    {
+      "contract": "Territories",
+      "abi": "abi/Territories.json",
+      "abi_sha256": "6d513c619dc11ce5b0c57f475111ba43ceca623fbaceece8db0c4de4ba094e12",
+      "binding": "generated/territories.gd",
+      "binding_sha256": "eab62685963a2543c894e52b8a1217be6f5a5ea622ed919de6c03c628ca51a8d",
+      "functions": 39
+    },
+    {
+      "contract": "TerritoryTreasury",
+      "abi": "abi/TerritoryTreasury.json",
+      "abi_sha256": "44bcd1fc9ba7b1a1912fda1fe4b802a7d3baa017da2aae74528544e4df24069a",
+      "binding": "generated/territory_treasury.gd",
+      "binding_sha256": "66727626a74abe98651bd9ed9a4d68378d943327796e55cc771710b923261686",
+      "functions": 12
+    },
+    {
+      "contract": "Treasury",
+      "abi": "abi/Treasury.json",
+      "abi_sha256": "fa8a0077c0c4ea1bcd2e298816e9c19253fdaf59585cb6e29feec82018969fed",
+      "binding": "generated/treasury.gd",
+      "binding_sha256": "4af4512bd00e70d869aba9091d037ddc11260f89b82d5f2f767d2bc6eeab8630",
+      "functions": 11
+    },
+    {
+      "contract": "UsageBasedSessionModule",
+      "abi": "abi/UsageBasedSessionModule.json",
+      "abi_sha256": "396fa3ac9d77c2ebb78ac1887e20db6869a9e9ac8b828b68ad327bd17df37239",
+      "binding": "generated/usage_based_session_module.gd",
+      "binding_sha256": "afafc34c3cf5e27a7435a296b6e49d44af23b63aae1eee62d6aa3a45779cee30",
+      "functions": 28
+    },
+    {
+      "contract": "WishingWell",
+      "abi": "abi/WishingWell.json",
+      "abi_sha256": "6a40a4e099e3537985137a1c81694a911490767aa369f46ea021f12129288bc3",
+      "binding": "generated/wishing_well.gd",
+      "binding_sha256": "a2a0d123cdd7d3f274f242e0504924e9506c753167fb366e761e0265e2349739",
+      "functions": 28
+    },
+    {
+      "contract": "WorldActions",
+      "abi": "abi/WorldActions.json",
+      "abi_sha256": "1f07355829bc27effd1bf6ba3bd4c8a5f18dbe69df6c78b4791e007bb02e2aca",
+      "binding": "generated/world_actions.gd",
+      "binding_sha256": "66dcad7e479bee02035592540d1e3221b9fc3cd60abdf17907b0c41ef1f273c9",
+      "functions": 23
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+# Godot editor state
+.godot/
+
+# Local verification output
+verification/
+*.log
+
+# Local tooling and OS files
+__pycache__/
+*.py[cod]
+.DS_Store
+.env
+.env.*
