@@ -1,6 +1,6 @@
 # Estfor Godot
 
-GDScript bindings for the [Estfor Kingdom smart contracts](https://github.com/PaintSwap/estfor-contracts), generated with [abi-typegen](https://github.com/doublesharp/abi-typegen).
+GDScript bindings for the [Estfor Kingdom smart contracts](https://github.com/PaintSwap/estfor-contracts), generated with [abi-typegen](https://github.com/0xdoublesharp/abi-typegen).
 
 Use the bindings to encode contract calls, decode results, events, and errors, and make asynchronous JSON-RPC requests from Godot. Contracts include Players, PlayerNFT, ItemNFT, PetNFT, Clans, Shop, Quests, and WorldActions. See [`manifest.json`](manifest.json) for the complete contract list, source revision, generator version, and file hashes.
 
@@ -15,7 +15,7 @@ cd estfor-godot
 
 Import `project.godot` in Godot. For an existing project, copy `generated/` and `bin/` into its root. Keep the extension descriptor and the `bin/macos/` directory together.
 
-The bundled extension is a locally built macOS arm64 debug binary. Release exports and other platforms require an appropriate extension build. See the [upstream Godot integration](https://github.com/doublesharp/abi-typegen/tree/v0.6.0/integrations/godot/extension) for build requirements. Use the version recorded in the manifest when building the runtime for these bindings.
+The bundled extension is a locally built macOS arm64 debug binary. Release exports and other platforms require an appropriate extension build. See the [upstream Godot integration](https://github.com/0xdoublesharp/abi-typegen/tree/v0.6.0/integrations/godot/extension) for build requirements. Use the version recorded in the manifest when building the runtime for these bindings.
 
 ## Read a contract
 
@@ -58,7 +58,7 @@ Keep integer values as ABI words to preserve the full Solidity range. Use the ge
 
 ## Regenerate bindings
 
-Python 3 and the exact abi-typegen version recorded in [`manifest.json`](manifest.json) are required. Download the generator from [abi-typegen releases](https://github.com/doublesharp/abi-typegen/releases).
+Python 3 and the exact abi-typegen version recorded in [`manifest.json`](manifest.json) are required. Download the generator from [abi-typegen releases](https://github.com/0xdoublesharp/abi-typegen/releases).
 
 ```sh
 python3 scripts/regenerate.py
